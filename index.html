@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Macskás Játék</title>
+</head>
+<body>
+    <h1>Macskafogó</h1>
+
+    <div id="wrapper">
+        <aside id="leiras">
+            <h2>Instrukciók</h2>
+            <p><b>1. Szabd személyre a játékod!</b><br> Válaszd ki a pálya méretét, a zsetonok színét és a macska kinézetét, majd a "Mehet!" gombra kattintva indítsd el a játékod!</p>
+            <p><b>2. Kerítsd be a macskát!</b><br> Minden zseton lerakásával a macska elmozdul a helyéről és megpróbál kijutni a játék területéről. A zsetonok lerakásával kerítsd be a macskát úgy, hogy ne tudjon mozogni!</p>
+            <p><b>3. Kerülj fel a ranglistára!</b><br> Ha sikeresen bekerítetted a macskát esélyed van felkerülni a ranglistára. Minél kevesebb zsetont raktál le a játék során, annál magasabban leszel a listán. <br><i>Megjegyzés: Minden böngészőben külön ranglista jön létre.</i></p>
+        </aside>
+
+        <main id="area">
+            <p id="szamlalo">Zsetonok: <span id="szamlaloSpan">0</span></p>
+            <img id="mute" src="./src/muteOff.png" alt="Némítás gomb" title="Némítás">
+            <img id="reset" src="./src/reset.png" alt="Újratölt gomb" title="Újratölt">
+            <form id="valaszto">
+                <span id="space"></span>
+
+                <label class="kerdes">Mekkora legyen a pálya?</label>
+                <section class="kerdesBlokk" id="meretValaszto">
+                <label>
+                    <input type="radio" name="meret" value="9">
+                    <img src="./src/kisMeret.png" alt="7x7" title="7x7"><br>
+                    <label>Kicsi</label>
+                </label>
+                <label>
+                    <input type="radio" name="meret" value="11" checked>
+                    <img src="./src/kozepesMeret.png" alt="9x9" title="9x9"><br>
+                    <label>Közepes</label>
+                </label>
+                <label>
+                    <input type="radio" name="meret" value="13">
+                    <img src="./src/nagyMeret.png" alt="11x11" title="11x11"><br>
+                    <label>Nagy</label>
+                </label>
+                </section>
+
+                <label class="kerdes">Milyen színűek legyenek a zsetonok?</label>
+                <section class="kerdesBlokk" id="szinValaszto">
+                    <label>
+                        <input type="radio" name="szin" value="Eg">
+                        <img src="./src/egSzin.png" alt="Ég" title="Ég"><br>
+                        <label>Ég</label>
+                    </label>
+                    <label>
+                        <input type="radio" name="szin" value="Erdo" checked>
+                        <img src="./src/erdoSzin.png" alt="Erdő" title="Erdő"><br>
+                        <label>Erdő</label>
+                    </label>
+                    <label>
+                        <input type="radio" name="szin" value="Nyar">
+                        <img src="./src/nyarSzin.png" alt="Nyár" title="Nyár"><br>
+                        <label>Nyár</label>
+                    </label>
+                </section>
+
+                <label class="kerdes">Milyen legyen a cica?</label>
+                <section class="kerdesBlokk" id="cicaValaszto">
+                    <label>
+                        <input type="radio" name="macska" value="1">
+                        <img src="./src/cat1.png" alt="Dömper" title="Dömper"><br>
+                        <label>Dömper</label>
+                    </label>
+                    <label>
+                        <input type="radio" name="macska" value="2" checked>
+                        <img src="./src/cat2.png" alt="Bolyhos" title="Bolyhos"><br>
+                        <label>Bolyhos</label>
+                    </label>
+                    <label>
+                        <input type="radio" name="macska" value="3">
+                        <img src="./src/cat3.png" alt="Kormi" title="Kormi"><br>
+                        <label>Kormi</label>
+                    </label>
+                </section>
+
+                <section class="gomb">
+                    <div id="ok" type="button">Mehet!</div>
+                </section>
+            </form>
+            <div id="jatek">
+            </div>
+        </main>
+
+        <aside id="ranglista">
+            <h2>Ranglista</h2>
+            <h3>Kicsi</h3>
+            <section>
+                <p><b>1.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+                <p><b>2.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+                <p><b>3.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+            </section>
+            <h3>Közepes</h3>
+            <section>
+                <p><b>1.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+                <p><b>2.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+                <p><b>3.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+            </section>
+            <h3>Nagy</h3>
+            <section>
+                <p><b>1.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+                <p><b>2.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+                <p><b>3.</b><span class="datum">———</span><span class="nev">———</span><span class="pontSzam">———</span>&nbsp;</p><br>
+            </section>
+        </aside>
+    </div>
+
+<audio src="./src/failHang.mp3" id="failHang"></audio>
+<audio src="./src/winHang.mp3" id="winHang"></audio>
+<audio src="./src/cicaHang1.mp3" class="cicaHang"></audio>
+<audio src="./src/cicaHang2.mp3" class="cicaHang"></audio>
+<audio src="./src/cicaHang3.mp3" class="cicaHang"></audio>
+<audio src="./src/cicaHang4.mp3" class="cicaHang"></audio>
+
+<script src="./index.js"></script>
+</body>
+</html>
